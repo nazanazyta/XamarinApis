@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApis.Views.DoctoresFavoritosView"
+             xmlns:local="clr-namespace:XamarinApis"
+             BindingContext="{Binding Source={x:Static local:App.ServiceLocator}, Path=DoctoresFavoritosViewModel}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Doctores favoritos!!" TextColor="Fuchsia" FontSize="40"
+                   VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+            <ListView ItemsSource="{Binding Doctores}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Apellido}"
+                                       TextColor="Blue"
+                                       FontSize="25"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
